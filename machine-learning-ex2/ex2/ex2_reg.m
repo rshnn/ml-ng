@@ -50,6 +50,15 @@ hold off;
 %  polynomial features to our data matrix (similar to polynomial
 %  regression).
 %
+clear ; close all; clc
+
+% Load Data
+%  The first two columns contains the X values and the third column
+%  contains the label (y).
+
+data = load('ex2data2.txt');
+X = data(:, [1, 2]); y = data(:, 3);
+
 
 % Add Polynomial Features
 
