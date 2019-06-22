@@ -21,14 +21,18 @@ grad = zeros(size(theta));
 
 h = X * theta; 
 
-
 sum1 = sum((h-y).^2); 
 sum2 = sum(theta(2:end).^2);
 
 J = (1/(2*m)) * sum1 + (lambda/(2*m)) * sum2; 
 
-grad = (1/m)*((h - y)'*X)';
-grad = grad + (lambda/m)*[0;theta(2:end,:)] ;
+
+
+
+sumg1 = h-y
+
+
+
 
 
 % =========================================================================

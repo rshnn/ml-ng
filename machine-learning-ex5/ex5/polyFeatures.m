@@ -15,7 +15,11 @@ X_poly = zeros(numel(X), p);
 %
 % 
 
+for power=1:p
+    
+    X_poly(:,power) = X'.^power;
 
+end
 
 
 

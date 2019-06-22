@@ -58,14 +58,23 @@ for samp_m = 1:m
 
     X_test = X(1:samp_m, :);
     y_test = y(1:samp_m);
-    
+    X_val = Xval(1:samp_m, :);
+    y_val = y(1:samp_m);
       
     [theta] = trainLinearReg(X_test, y_test, lambda);
-        
-    error_train(samp_m) = linearRegCostFunction(X_test, y_test, theta, 0);
-    error_val(samp_m) = linearRegCostFunction(Xval, yval, theta, 0);
+    
+    htest = X_test * theta;
+    hval = X_val * theta;
 
+    
+    
+    
 end
+
+
+
+
+
 
 
 
