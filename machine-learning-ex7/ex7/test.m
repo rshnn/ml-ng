@@ -1,12 +1,20 @@
-function X_rec = recoverData(Z, U, K)
-%RECOVERDATA Recovers an approximation of the original data when using the 
-%projected data
-%   X_rec = RECOVERDATA(Z, U, K) recovers an approximation the 
-%   original data that has been reduced to K dimensions. It returns the
-%   approximate reconstruction in X_rec.
-%
+clc; clear; 
+Q = reshape([1:15],5,3);
+% recoverData(Q, magic(5), 3)
 
-% You need to return the following variables correctly.
+% result
+% ans =
+%    172   130   183   291   394
+%    214   165   206   332   448
+%    256   200   229   373   502
+%    298   235   252   414   556
+%    340   270   275   455   610
+
+
+Z = Q;
+U = magic(5); 
+K = 3; 
+
 X_rec = zeros(size(Z, 1), size(U, 1));
 
 % ====================== YOUR CODE HERE ======================
@@ -21,8 +29,6 @@ X_rec = zeros(size(Z, 1), size(U, 1));
 %               Notice that U(j, 1:K) is a row vector.
 %               
 
-
-
 for i = 1:size(Z, 1)
    
     for j = 1:size(U, 2)
@@ -35,6 +41,5 @@ for i = 1:size(Z, 1)
     end
     
 end
-% =============================================================
 
-end
+X_rec
