@@ -17,5 +17,5 @@ k means algorithm stuck in a local minima
 
 
 k means used for image compression  
-![c](/images/k-means-means.png)
+![c](/images/k-means-compression.png)
 
