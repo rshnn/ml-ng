@@ -41,19 +41,31 @@ Theta_grad = zeros(size(Theta));
 %
 
 
+% 
+% total = 0; 
+% for i = 1:num_movies 
+% 
+%     for j = 1:num_users 
+%         
+%         if(R(i, j) == 1)
+%             
+% %             total = total + (Theta(j)' * X(i) - Y(i, j))^2;
+%             total = total + (X(i)' * Theta(j) - Y(i, j))^2;
+% 
+%         end
+%     
+%     end
+% 
+% end 
 
+J = 1/2 * sum(sum((R.* ((X*Theta') - Y)).^2));
+X_grad = (R .* (X*Theta' - Y)) * Theta;
+Theta_grad = (R .* (X*Theta' - Y))' * X;
 
-
-
-
-
-
-
-
-
-
-
-
+% With regularization
+J = J + lambda/2 * (sum(sum(Theta.^2)) + sum(sum(X.^2)));
+X_grad = X_grad + lambda * X;
+Theta_grad = Theta_grad + lambda * Theta;
 
 % =============================================================
 

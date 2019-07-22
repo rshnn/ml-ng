@@ -26,12 +26,17 @@ for epsilon = min(pval):stepsize:max(pval)
     
     predictions = (pval < epsilon); 
     
-
-
-
-
-
-
+    true_positives = sum(predictions & yval);
+    
+    
+    total_model_pos = sum(predictions == 1);
+    total_obs_pos = sum(yval == 1); 
+    
+    prec = true_positives / total_model_pos; 
+    recall = true_positives / total_obs_pos; 
+    
+    
+    F1 = (2 * prec * recall) / (prec + recall); 
 
 
 
